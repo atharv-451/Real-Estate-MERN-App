@@ -247,7 +247,7 @@ export default function Profile() {
         {showListing ? "Hide Listing" :"Show Listing" }
       </button>
       <p className='text-red-700 mt-5 text-center'>
-        {showListing && userListings.length==0 ? 'There are no Listing available for this account' : ''}
+        {showListing && userListings.length==0 ? 'You have not created any Listings' : ''}
       </p>
       <p className='text-red-700 mt-5'>
         {showListingsError ? 'Error showing listings' : ''}
