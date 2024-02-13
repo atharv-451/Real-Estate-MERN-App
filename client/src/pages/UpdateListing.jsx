@@ -266,6 +266,7 @@ export default function CreateListing() {
                 id='bedrooms'
                 min='1'
                 max='10'
+                size='4'
                 required
                 className='p-3 border border-gray-300 rounded-lg'
                 onChange={handleChange}
@@ -279,6 +280,7 @@ export default function CreateListing() {
                 id='bathrooms'
                 min='1'
                 max='10'
+                size='4'
                 required
                 className='p-3 border border-gray-300 rounded-lg'
                 onChange={handleChange}
@@ -292,6 +294,7 @@ export default function CreateListing() {
                 id='regularPrice'
                 min='50'
                 max='10000000'
+                size='9'
                 required
                 className='p-3 border border-gray-300 rounded-lg'
                 onChange={handleChange}
@@ -300,7 +303,7 @@ export default function CreateListing() {
               <div className='flex flex-col items-center'>
                 <p>Regular price</p>
                 {formData.type === 'rent' && (
-                  <span className='text-xs'>($ / month)</span>
+                  <span className='text-xs'>(&#8377; / month)</span>
                 )}
               </div>
             </div>
@@ -311,6 +314,7 @@ export default function CreateListing() {
                   id='discountPrice'
                   min='0'
                   max='10000000'
+                  size='9'
                   required
                   className='p-3 border border-gray-300 rounded-lg'
                   onChange={handleChange}
@@ -319,7 +323,7 @@ export default function CreateListing() {
                 <div className='flex flex-col items-center'>
                   <p>Discounted price</p>
                   {formData.type === 'rent' && (
-                    <span className='text-xs'>($ / month)</span>
+                    <span className='text-xs'>(&#8377;/ month)</span>
                   )}
                 </div>
               </div>
