@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import { useSelector } from 'react-redux';
 import { useRef, useState, useEffect } from 'react';
@@ -130,7 +131,7 @@ export default function Profile() {
         setShowListingsError(true);
         return;
       }
-      if(showListing){
+      if(showListing ){
         setUserListings([]);
         setShowListing(false);
       }else{
@@ -152,10 +153,11 @@ export default function Profile() {
         console.log(data.message);
         return;
       }
-
       setUserListings((prev) =>
         prev.filter((listing) => listing._id !== listingId)
       );
+      if(userListings.length == 0)
+        setShowListing(false);
     } catch (error) {
       console.log(error.message);
     }
@@ -242,8 +244,11 @@ export default function Profile() {
         {updateSuccess ? 'User is updated successfully!' : ''}
       </p>
       <button onClick={handleShowListings} className='text-green-700 w-full hover:underline'>
-        {showListing ? "Hide Listing":"Show Listing"}
+        {showListing ? "Hide Listing" :"Show Listing" }
       </button>
+      <p className='text-red-700 mt-5 text-center'>
+        {showListing && userListings.length==0 ? 'There are no Listing available for this account' : ''}
+      </p>
       <p className='text-red-700 mt-5'>
         {showListingsError ? 'Error showing listings' : ''}
       </p>
