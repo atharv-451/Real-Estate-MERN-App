@@ -99,7 +99,7 @@ export default function Listing() {
                                 {
                                     listing.offer && (
                                         <p className="bg-green-900 w-full max-w-[200px] text-white text-center p-1 rounded-md">
-                                            &#8377;{+listing.regularPrice - +listing.discountPrice}
+                                            You will save &#8377;{+listing.regularPrice - +listing.discountPrice} 
                                         </p>
                                     )
                                 }
@@ -115,7 +115,7 @@ export default function Listing() {
                                 </li>
                                 <li className='flex items-center gap-1 whitespace-nowrap '>
                                     <FaBath className='text-lg'/>
-                                    {listing.bedrooms > 1 ? `${listing.bedrooms} Baths` : ` ${listing.bedrooms} Bath`}
+                                    {listing.bathrooms > 1 ? `${listing.bathrooms} Baths` : ` ${listing.bathrooms} Bath`}
                                 </li>
                                 <li className='flex items-center gap-1 whitespace-nowrap '>
                                     <FaParking className='text-lg'/>
